@@ -1,5 +1,5 @@
 # vue-echo
-Vue 2 integration for the Laravel Echo library.
+Vue 2 integration for the Laravel Echo library with latest dependencies.
 
 This Vue plugin injects a Laravel Echo instance into all of your vue instances, allowing for a simple channel subscription on each instance, or using Laravel Echo through `this.$echo`.
 You can use socket.io and pusher or any config as per laravel/echo
@@ -7,7 +7,7 @@ You can use socket.io and pusher or any config as per laravel/echo
 ## Install
 
 ``` bash
-npm install vue-echo --save
+npm install vue-echo-laravel --save
 ```
   
 ## Usage
