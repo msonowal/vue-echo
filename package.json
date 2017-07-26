@@ -1,6 +1,6 @@
 {
   "name": "vue-echo-laravel",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "It's a laravel/echo wrapper for Vue JS ^2.0. This Vue plugin injects a Laravel Echo instance into all of your vue instances, allowing for a simple channel subscription on each instance, or using Laravel Echo through this.$echo. It will be synced with lates version of echo repo",
   "main": "dist/build.js",
   "scripts": {
@@ -8,16 +8,16 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "laravel-echo": "^1.3.0",
+    "laravel-echo": "^1.3.1",
     "pusher-js": "^4.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
-    "babel-loader": "^7.0.0",
+    "babel-loader": "^7.1.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "cross-env": "^5.0.0",
-    "webpack": "^2.5.1"
+    "cross-env": "^5.0.1",
+    "webpack": "^3.3.0"
   },
   "repository": {
     "type": "git",
