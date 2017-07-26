@@ -16,7 +16,7 @@ npm install vue-echo-laravel --save
 First you'll need to register the plugin and, optionally, initialize the Echo instance.
 
 ``` js
-import VueEcho from 'vue-echo';
+import VueEcho from 'vue-echo-laravel';
   
 Vue.use(VueEcho, {
     broadcaster: 'socket.io',
