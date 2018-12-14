@@ -1,6 +1,6 @@
 {
   "name": "vue-echo-laravel",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "It's a laravel/echo wrapper for Vue JS ^2.0. This Vue plugin injects a Laravel Echo instance into all of your vue instances, allowing for a simple channel subscription on each instance, or using Laravel Echo through this.$echo. It will be synced with lates version of echo repo",
   "main": "dist/build.js",
   "scripts": {
