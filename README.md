@@ -60,17 +60,17 @@ You can subscribe a vue instance to a single standard channel if needed and defi
 var vm = new Vue({
     channel: 'blog',
     echo: {
-        'BlogPostCreated': (payload, vm) => {
+        'BlogPostCreated': (payload) => {
             console.log('blog post created', payload);
         },
-        'BlogPostDeleted': (payload, vm) => {
+        'BlogPostDeleted': (payload) => {
             console.log('blog post deleted', payload);
         }
     }
 });
 ```
 
-Since the scope of `this` would be the same as the scope where you declare your Vue instance a second parameter is added to these locally registered events. This parameter is a direct reference to your Vue instance, you can make any changes you need through there.
+You can feel free to use `this` inside Your methods. 
 
 #### Subscribing to channels
 
@@ -85,15 +85,40 @@ If you would like to subscribe to a private channel instead, prefix your channel
 var vm = new Vue({
     channel: 'private:user.1',
     echo: {
-        'BlogPostCreated': (payload, vm) => {
+        'BlogPostCreated': (payload) => {
             console.log('blog post created', payload);
         },
-        'BlogPostDeleted': (payload, vm) => {
+        'BlogPostDeleted': (payload) => {
             console.log('blog post deleted', payload);
         }
     }
 });
 ```
+
+If you need to compute channel name, you should pass `channel` as function.
+
+```js
+var vm = new Vue({
+    channel() {
+        return `private:user.${ this.userId }`
+    },
+    echo: {
+        'BlogPostCreated': (payload) => {
+            console.log('blog post created', payload);
+        },
+        'BlogPostDeleted': (payload) => {
+            console.log('blog post deleted', payload);
+        }
+    },
+
+    computed: {
+        userId() {
+            return 1;
+        }
+    }
+});
+````
+
 
 ##### Presence channel
 
@@ -103,7 +128,7 @@ If you would like to subscribe to presence channel instead, prefix your channel 
 var vm = new Vue({
     channel: 'presence:user.1.chat',
     echo: {
-        'NewMessage': (payload, vm) => {
+        'NewMessage': (payload) => {
             console.log('new message from team', payload);
         }
     }
@@ -118,10 +143,10 @@ If there's a scenario where you want to listen to events after certain condition
 var vm = new Vue({
     channel: 'private:user.1',
     echo: {
-        'BlogPostCreated': (payload, vm) => {
+        'BlogPostCreated': (payload) => {
             console.log('blog post created', payload);
         },
-        'BlogPostDeleted': (payload, vm) => {
+        'BlogPostDeleted': (payload) => {
             console.log('blog post deleted', payload);
         }
     },

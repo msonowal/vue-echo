@@ -23,6 +23,11 @@ export default {
             created(){
                 let channel = this.$options['channel'];
 
+                if (typeof channel === 'function')
+                {
+                    channel = channel.bind(this).call();
+                }
+
                 if(channel)
                 {
                     if(channel.startsWith('private:'))
@@ -45,7 +50,7 @@ export default {
                         Object.keys(events).forEach(function(key){
                             // Bind the VM as second parameter
                             this.channel.listen(key, (payload) => {
-                                events[key](payload, this);
+                                events[key].bind(this)(payload);
                             });
                         }, this);
                     }
