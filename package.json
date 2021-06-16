@@ -5,6 +5,7 @@
   "main": "dist/build.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "release": "git push --follow-tags && npm publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

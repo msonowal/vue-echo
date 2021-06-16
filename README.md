@@ -8,10 +8,17 @@ This project does not require updates as it directly uses your latest version
 
 ## Install
 
+via yarn
+``` bash
+yarn add vue-echo-laravel
+```
+
+or via npm
+
 ``` bash
 npm install vue-echo-laravel --save
 ```
-  
+
 ## Usage
 
 ### Initialize
