@@ -6,6 +6,8 @@ You can use socket.io and pusher or any config as per laravel/echo
 
 This project does not require updates as it directly uses your latest version
 
+[NPM LINK package/vue-echo-laravel ](https://www.npmjs.com/package/vue-echo-laravel)
+
 ## Install
 
 via yarn
@@ -166,3 +168,7 @@ var vm = new Vue({
     }
 });
 ```
+
+
+
+### Acepting PR for Vue Composition API 
